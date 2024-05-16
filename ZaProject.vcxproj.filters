@@ -20,7 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PatientRecordManager.h">
+    <ClInclude Include="PatientRecord.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FinancialRecordManager.h">
@@ -36,6 +36,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PatientRecordManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

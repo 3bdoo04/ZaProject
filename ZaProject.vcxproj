@@ -134,6 +134,7 @@
     <ClInclude Include="FinancialRecordManager.h" />
     <ClInclude Include="MedicineManager.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="PatientRecord.h" />
     <ClInclude Include="PatientRecordManager.h" />
     <ClInclude Include="TreatmentManager.h" />
   </ItemGroup>
