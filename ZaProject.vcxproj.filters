@@ -20,9 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PatientRecord.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FinancialRecordManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
