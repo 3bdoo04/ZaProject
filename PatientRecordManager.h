@@ -3,26 +3,37 @@
 #include<vector>
 #include<algorithm>
 #include<ctime>
-#pragma once
+#include "FileHandler.h"
 
 using namespace std;
 
-class PatientRecordManager
-{
+    class PatientRecordManager
+    {
 
-protected:
+    protected:
 
-    tm recordDate;  // Stores the date the record was created.
-    string name;
-    string address;
-    int age;
-    char gender;
-    string diseaseDescription;
-    int specialistRoomNumber;
-    vector <PatientRecordManager> records;  // Vector to store patient records.
-    int nextRecordNumber;  // Stores the next record number to be assigned.
+        tm recordDate;  // Stores the date the record was created.
+        vector <PatientRecord> records;  // Vector to store patient records.
+	    FileHandler fileHandler;
 
-public:
+    public:
+        struct PatientRecord {
+            string name;
+            string address;
+            int age;
+            char gender;
+            string diseaseDescription;
+            int specialistRoomNumber;
+        };
+
+        void exprotToFile() {
+            fileHandler.saveToFile(records);
+        }
+
+        void importFromFile() {
+            fileHandler.readFromFile(records);
+        }
+
     PatientRecordManager()
     {
         nextRecordNumber = 1;
@@ -294,4 +305,6 @@ public:
 
         cout << "Record edited successfully." << endl;
     }
+
+
 };
