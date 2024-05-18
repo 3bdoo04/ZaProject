@@ -23,9 +23,9 @@ protected:
     int nextRecordNumber;  // Stores the next record number to be assigned.
 
 public:
-    PatientRecordManager() 
-    {   
-        nextRecordNumber = 1; 
+    PatientRecordManager()
+    {
+        nextRecordNumber = 1;
 
         time_t now = time(0);
         recordDate = *localtime(&now);
@@ -134,7 +134,7 @@ public:
     }
     void listPatientRecords(string option) {
         if (option == "alphabetical") {
-            
+
             sort(records.begin(), records.end(), [](const PatientRecordManager& a, const PatientRecordManager& b) {
                 return a.name < b.name;
                 });
@@ -146,18 +146,18 @@ public:
         }
         else if (option == "emergency") {
             cout << "Listing emergency patients:" << endl;
-            
+
             for (const PatientRecordManager& record : records) {
-                if (record.name.find("Emergency") != string::npos) { 
+                if (record.name.find("Emergency") != string::npos) {
                     displayRecordDetails(record);
                 }
             }
         }
         else if (option == "outpatient") {
             cout << "Listing outpatient patients:" << endl;
-            
+
             for (const PatientRecordManager& record : records) {
-                if (record.name.find("Outpatient") != string::npos) { 
+                if (record.name.find("Outpatient") != string::npos) {
                     displayRecordDetails(record);
                 }
             }
@@ -165,14 +165,14 @@ public:
         else if (option == "date") {
             tm userDate;
 
-            
+
             bool validDate = false;
             while (!validDate) {
                 cout << "Enter date (YYYY MM DD): ";
                 cin >> userDate.tm_year >> userDate.tm_mon >> userDate.tm_mday;
                 userDate.tm_isdst = -1;
 
-                
+
                 if (userDate.tm_year >= 1900 && userDate.tm_mon >= 0 && userDate.tm_mon <= 11 && userDate.tm_mday >= 1 && userDate.tm_mday <= 31) {
                     validDate = true;
                 }
@@ -183,7 +183,7 @@ public:
 
             cout << "Listing patients with records on " << userDate.tm_year + 1900 << "-" << userDate.tm_mon + 1 << "-" << userDate.tm_mday << ":" << endl;
 
-            
+
             for (const PatientRecordManager& record : records) {
                 if (record.recordDate.tm_year == userDate.tm_year && record.recordDate.tm_mon == userDate.tm_mon && record.recordDate.tm_mday == userDate.tm_mday) {
                     displayRecordDetails(record);
@@ -210,7 +210,7 @@ public:
             records.erase(records.begin() + index);
             cout << "Record deleted successfully." << endl;
         }
-    } 
+    }
     int findRecordIndex(int recordNumber) {  // Function to find record index by record number.
         for (int i = 0; i < records.size(); i++) {
             if (records[i].nextRecordNumber == recordNumber) {
@@ -220,7 +220,7 @@ public:
         return -1;
     }
 
-    
+
     int findRecordIndexByName(string fullName) {  // Function to find record index by full name.
         for (int i = 0; i < records.size(); i++) {
             if (records[i].name.find(fullName) != string::npos) {
@@ -231,7 +231,7 @@ public:
         return -1;
     }
 
-    
+
     void displayRecordDetails(const PatientRecordManager& record) {
         cout << "Record Number: " << record.nextRecordNumber << endl;
         cout << "Name: " << record.name << endl;
@@ -239,7 +239,7 @@ public:
 
     }
     void editPatientRecord(PatientRecordManager& record) {
-        
+
         cout << "Current Name: " << record.name << endl;
         cout << "Current Address: " << record.address << endl;
         cout << "Current Age: " << record.age << endl;
