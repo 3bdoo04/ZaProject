@@ -210,10 +210,7 @@ public:
             records.erase(records.begin() + index);
             cout << "Record deleted successfully." << endl;
         }
-    }
-
-private:
-    
+    } 
     int findRecordIndex(int recordNumber) {  // Function to find record index by record number.
         for (int i = 0; i < records.size(); i++) {
             if (records[i].nextRecordNumber == recordNumber) {

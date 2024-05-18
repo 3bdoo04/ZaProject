@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class FinancialRecordManager
+class FinancialRecordManager : public PatientRecordManager
 {
 
 protected:
@@ -16,12 +16,7 @@ protected:
 
 public:
 
-	void displayFinancialRecords(int recordNumber) {
-
-
-
-
-	}
+    
 
 };
 
