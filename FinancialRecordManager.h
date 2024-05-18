@@ -1,3 +1,6 @@
+#include<iostream>
+#include"PatientRecordManager.h"
+#include<vector>
 #pragma once
 
 using namespace std;
@@ -10,6 +13,15 @@ protected:
 	double totalCharge;
 	double totalDeposited;
 	double totalMoneyToReturn;
+
+public:
+
+	void displayFinancialRecords(int recordNumber) {
+
+
+
+
+	}
 
 };
 
