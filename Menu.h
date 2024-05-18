@@ -1,5 +1,27 @@
+#include<iostream>
+#include<string>
+#include<fstream>
+#include<vector>
+#include"PatientRecordManager.h"
+#include"FinancialRecordManager.h"
+#include"TreatmentManager.h"
+#include"MedicineManager.h"
 #pragma once
-class Menu
+
+using namespace std;
+
+class Menu : public PatientRecordManager : public FinancialRecordManager : public TreatmentManager : public MedicineManager
 {
+
+
+
+
+
+
+
+
+
+
+
 };
 
